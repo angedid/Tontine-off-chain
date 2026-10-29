@@ -8,7 +8,7 @@ import { secretSeed } from "./seed.ts"
 const lucid = await Lucid.new(
     new Blockfrost(
         "https://cardano-preview.blockfrost.io/api/v0",
-        "previewAiQH6B0Rcvef02CHU5T3x74QgLysWKbj"
+        "previewAPIKey"
     ), "Preview",
 );
 

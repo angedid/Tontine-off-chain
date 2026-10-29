@@ -17,13 +17,12 @@ import { secretSeed } from "./seed.ts"
 const tontineApplication = await Lucid.new(
     new Blockfrost(
         "https://cardano-preview.blockfrost.io/api/v0",
-        "previewAiQH6B0Rcvef02CHU5T3x74QgLysWKbj"
+        "previewAPIKey"
     ), "Preview",
 );
 
 // Associer un porte-monnaie electronique
 tontineApplication.selectWalletFromSeed(secretSeed);
-//tontineApplication.selectWalletFrom({address:"addr_test1vrmemrvzn049qymmefgmmgwedcqf8g58wja7ld28f3llpsqyhmlh0"})
 const addr: Address = await tontineApplication.wallet.address();
 //console.log(addr);
 
@@ -115,7 +114,7 @@ async function closeTontine(amount:bigint):Promise<TxHash>{
     };
     const memb: MemberData = {
         identifier: fromText("1eff5a126"),
-        mane: fromText("Nkalla Ehawe"),
+        mane: fromText("Someone"),
         phonenumber: fromText("123456789")
     };
     const datumTontine: TontineDatumData = {
@@ -125,17 +124,6 @@ async function closeTontine(amount:bigint):Promise<TxHash>{
     };
     const datumData: Datum = Data.to<TontineDatumData>(datumTontine, TontineDatumData);
 
-    //const openOperationType : OperationTypeData = {getOperationType: fromText("OPEN")};
-    //const plutusVersionOperationType = Data.to<OperationTypeData>(openOperationType,OperationTypeData);
-
-    //const filteredUtxos: UTxO[] = utxosScript.filter((x:UTxO)=>
-        //(x.datum != null) || (x.datum == plutusVersionOperationType));
-       // && (x.datum.operation != null)
-        //&& x.datum.operation.getOperationType != openOperationType.getOperationType);
-
-   // console.log("filteredUtxos: ");
-    //console.log(filteredUtxos);
-    //console.log(plutusVersionOperationType);
     const tx = await tontineApplication
         .newTx()
         .collectFrom(
@@ -160,7 +148,5 @@ async function closeTontine(amount:bigint):Promise<TxHash>{
 
 console.log(utxosScript);
 
-//console.log(typeof utxosScript);
-
 console.log(await closeTontine(1200000n));
-// 5820c5a113a072169e8f4258da6b548ddc79f8a3500a5def6076ebb2a85707297249
+

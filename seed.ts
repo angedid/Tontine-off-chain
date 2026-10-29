@@ -1,5 +1,4 @@
-export const  secretSeed =
-    "small magic allow corn wine circle pitch huge unknown noble thrive evoke tiny shallow ketchup chase lonely step leisure piano mother viable mask wish"
+export const  secretSeed = "some seed word";
 
 
 export const fromText = (str) => {
