@@ -16,7 +16,7 @@ import {
 const tontineApplication = await Lucid.new(
     new Blockfrost(
         "https://cardano-preview.blockfrost.io/api/v0",
-        "previewAiQH6B0Rcvef02CHU5T3x74QgLysWKbj"
+        "previewApiKey"
     ), "Preview",
 );
 
@@ -90,7 +90,7 @@ const membre : MemberData = {
 const mydatum : TontineDatumData = {
     operation: tontine,
     transactor: moimeme,
-    member : raoul
+    member : toimeme
 };
 
 console.log(mydatum);
@@ -109,7 +109,7 @@ const transtor : TransactorData = {
 };
 const memb: MemberData = {
     identifier: fromText("1eff5a126"),
-    mane: fromText("Nkalla Ehawe"),
+    mane: fromText("somebody"),
     phonenumber: fromText("123456789")
 };
 const datumTontine: TontineDatumData = {

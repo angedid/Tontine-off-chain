@@ -16,7 +16,7 @@ import { secretSeed, fromText } from "./seed.ts";
 
 const provider: Provider = await new Blockfrost(
     "https://cardano-preview.blockfrost.io/api/v0",
-    "previewAiQH6B0Rcvef02CHU5T3x74QgLysWKbj"
+    "previewAPIKey"
 );
 
 console.log(provider);
@@ -295,11 +295,4 @@ async function payer(beneficiaryAddress:Address):Promise<TxHash>{
         return txHash
     }else return "No UTxO's found that can be used to titiner tontine";
 }
-
-//console.log(await initilizeTontine());
-//console.log(await openTontine());
-//console.log(await closeTontine());
-//console.log(await tontiner(200000000n));
-//addr_test1vp5mucfd6c2zt7xjwu9kh4v60u9axherz04l6wvu4mtxgccjykncw
-//console.log(await payer("addr_test1vp7qvzv9qnnqtcjhz7wcdz3th898csetqaerl56whwkl0xg5dpcxs"));
 
